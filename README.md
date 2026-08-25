@@ -54,12 +54,6 @@ Python · SQL · BigQuery · Tableau/Plotly · Streamlit · GitHub. Production e
 | CTR rises while downstream CVR falls | Creative may attract low-intent traffic | Message-to-landing-page experiment |
 | Platform and CRM conversions disagree | Attribution or tracking may be overstating impact | Identity and event reconciliation |
 
-## Interview-ready talking points
-
-- **How I structure the story:** I begin with the decision and audience, define the success metric, show only evidence that changes the decision, and end with an owner, action, and measurement plan.
-- **How I avoid misleading executives:** I distinguish descriptive correlation, attribution, predictive evidence, and causal evidence; uncertainty and data limitations stay visible.
-- **How I choose visuals:** trend charts for change, funnels for leakage, cohort tables for quality, and current-versus-recommended views for decisions.
-- **How I handle disagreement:** I trace every disputed KPI to its definition, source, grain, attribution window, and refresh schedule before debating interpretation.
 
 ## Success criteria
 
