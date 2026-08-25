@@ -2,6 +2,8 @@
 
 > Turning marketing and customer analytics into clear executive decisions.
 
+![Executive decision storytelling dashboard](decision_storytelling_dashboard.svg)
+
 ## The story arc
 
 ```mermaid
@@ -53,7 +55,6 @@ Python · SQL · BigQuery · Tableau/Plotly · Streamlit · GitHub. Production e
 | Spend grows faster than qualified outcomes | Marginal efficiency may be declining | Geo holdout or capped-budget test |
 | CTR rises while downstream CVR falls | Creative may attract low-intent traffic | Message-to-landing-page experiment |
 | Platform and CRM conversions disagree | Attribution or tracking may be overstating impact | Identity and event reconciliation |
-
 
 ## Success criteria
 
