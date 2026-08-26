@@ -2,8 +2,6 @@
 
 > Turning marketing and customer analytics into clear, evidence-backed executive decisions.
 
-![Executive decision storytelling dashboard](decision_storytelling_dashboard.svg)
-
 Decision storytelling is not decorating a dashboard or presenting every analytical result. It is the structured practice of connecting a business question to reliable evidence, a defensible insight, a recommended action, and a measurable outcome.
 
 ```mermaid
@@ -20,6 +18,17 @@ flowchart LR
 
 **Technique:** decision-first framing.
 
+```mermaid
+flowchart LR
+ A[Business topic] --> B{Decision?}
+ B -->|Invest| C[Allocate budget]
+ B -->|Optimize| D[Change execution]
+ B -->|Pause| E[Reduce risk]
+ C --> F[Success metric]
+ D --> F
+ E --> F
+```
+
 1. Name the decision-maker.
 2. State the exact decision and deadline.
 3. Identify the available choices.
@@ -34,6 +43,21 @@ flowchart LR
 
 **Technique:** audience and information-needs analysis.
 
+```mermaid
+quadrantChart
+ title Audience needs matrix
+ x-axis Operational detail --> Strategic synthesis
+ y-axis Low immediacy --> High immediacy
+ quadrant-1 Executive decision
+ quadrant-2 Campaign action
+ quadrant-3 Technical appendix
+ quadrant-4 Leadership planning
+ Analytics team: [0.22, 0.25]
+ Campaign team: [0.38, 0.78]
+ Marketing leadership: [0.72, 0.66]
+ Executive leadership: [0.9, 0.9]
+```
+
 | Audience | Primary concern | Useful evidence | Best output |
 |---|---|---|---|
 | Executive leadership | Growth, risk, return | Trend, financial impact, confidence | One-page narrative |
@@ -47,6 +71,13 @@ Adapt depth and language without changing the underlying facts.
 
 **Technique:** situation–complication–question–answer.
 
+```mermaid
+flowchart LR
+ S[Situation\nWhat is true?] --> C[Complication\nWhat changed?]
+ C --> Q[Question\nWhat must we decide?]
+ Q --> A[Answer\nWhat should we do?]
+```
+
 1. **Situation:** establish the relevant context.
 2. **Complication:** explain what changed or why action is needed.
 3. **Question:** state the decision that must be made.
@@ -57,6 +88,14 @@ This prevents a presentation from becoming a chronological tour through the anal
 ## Step 4 — Define governed metrics
 
 **Technique:** metric hierarchy and denominator control.
+
+```mermaid
+flowchart TD
+ A[Business value\nRevenue · LTV] --> B[Conversion\nCVR · CAC]
+ B --> C[Engagement\nCTR · Depth]
+ C --> D[Awareness\nReach · Demand]
+ D --> E[Governed sources\nCRM · GA4 · Media]
+```
 
 | Layer | Example KPIs |
 |---|---|
@@ -70,6 +109,15 @@ For every KPI, document its formula, grain, population, source, owner, refresh t
 ## Step 5 — Establish the baseline and comparison
 
 **Technique:** context through benchmarks.
+
+```mermaid
+xychart-beta
+ title "Performance requires a reference point"
+ x-axis [Prior, Target, Current, Forecast]
+ y-axis "Conversion rate (%)" 0 --> 12
+ bar [7.1, 9.5, 8.4, 9.0]
+ line [7.1, 9.5, 8.4, 9.0]
+```
 
 Use the comparison that matches the decision:
 
@@ -86,6 +134,15 @@ Avoid presenting a number without a meaningful reference point.
 
 **Technique:** evidence filtering.
 
+```mermaid
+flowchart TD
+ A[Analytical finding] --> B{Changes the decision?}
+ B -->|Yes| C[Main narrative]
+ B -->|No| D{Changes risk or confidence?}
+ D -->|Yes| C
+ D -->|No| E[Appendix or omit]
+```
+
 Keep an analytical result only when it changes one of these:
 
 - The recommended action
@@ -99,6 +156,17 @@ Place supporting diagnostics in an appendix instead of the main narrative.
 ## Step 7 — Diagnose the driver, not only the symptom
 
 **Technique:** decomposition and segmentation.
+
+```mermaid
+flowchart TD
+ A[Overall KPI change] --> B[Volume effect]
+ A --> C[Rate effect]
+ A --> D[Mix effect]
+ C --> E[Funnel stage]
+ D --> F[Channel]
+ D --> G[Cohort]
+ D --> H[Geography]
+```
 
 Break aggregate movement into:
 
@@ -114,6 +182,14 @@ Always test for Simpson’s paradox before treating an aggregate trend as univer
 
 **Technique:** evidence-strength labeling.
 
+```mermaid
+flowchart LR
+ A[Descriptive\nWhat happened?] --> B[Associational\nWhat moves together?]
+ B --> C[Predictive\nWhat may happen?]
+ C --> D[Causal\nWhat happened because of X?]
+ style D fill:#1f6feb,color:#fff
+```
+
 | Statement type | Appropriate language |
 |---|---|
 | Descriptive | “Conversion was lower in the paid-social cohort.” |
@@ -126,6 +202,14 @@ Attribution reports and observational correlations do not establish incrementali
 ## Step 9 — Quantify magnitude and uncertainty
 
 **Technique:** effect-size communication.
+
+```mermaid
+xychart-beta
+ title "Point estimate with plausible range"
+ x-axis [Low, Estimate, High]
+ y-axis "Incremental revenue ($K)" 0 --> 180
+ bar [70, 120, 165]
+```
 
 Report:
 
@@ -142,6 +226,15 @@ A statistically significant result can still be too small to matter commercially
 
 **Technique:** message-first visualization.
 
+```mermaid
+flowchart LR
+ A{Analytical message} -->|Compare| B[Bar]
+ A -->|Trend| C[Line]
+ A -->|Relationship| D[Scatter]
+ A -->|Stage loss| E[Funnel]
+ A -->|Segments| F[Small multiples]
+```
+
 1. Use a takeaway title instead of a topic title.
 2. Highlight the decision-relevant series.
 3. Remove decorative clutter.
@@ -156,6 +249,12 @@ Choose bars for comparison, lines for time, slopes for change, funnels for stage
 
 **Technique:** fact–meaning–implication.
 
+```mermaid
+flowchart LR
+ A[Fact\nSpend +30%] --> B[Meaning\nMarginal audience is weaker]
+ B --> C[Implication\nCap and test targeting]
+```
+
 - **Fact:** what the evidence shows.
 - **Meaning:** why the pattern exists or matters.
 - **Implication:** what the decision-maker should do differently.
@@ -165,6 +264,19 @@ Example: “Paid-social spend rose 30%, but qualified outcomes increased only 5%
 ## Step 12 — Make the recommendation executable
 
 **Technique:** action specification.
+
+```mermaid
+flowchart TD
+ A[Recommendation] --> B[Owner]
+ A --> C[Timing]
+ A --> D[Resources]
+ A --> E[Expected impact]
+ A --> F[Guardrails]
+ F --> G{Result}
+ G -->|Above threshold| H[Scale]
+ G -->|Within range| I[Continue test]
+ G -->|Below guardrail| J[Stop]
+```
 
 A strong recommendation states:
 
@@ -183,6 +295,19 @@ Offer alternatives when the decision involves a genuine trade-off.
 
 **Technique:** pre-mortem and disconfirmation.
 
+```mermaid
+flowchart TD
+ A[Preferred recommendation] --> B{What could invalidate it?}
+ B --> C[Tracking change]
+ B --> D[Seasonality]
+ B --> E[Selection bias]
+ B --> F[Segment harm]
+ C --> G[Revise confidence]
+ D --> G
+ E --> G
+ F --> G
+```
+
 Ask:
 
 - What evidence would reverse the recommendation?
@@ -197,6 +322,13 @@ Present the principal risk alongside the recommendation.
 ## Step 14 — Structure the executive output
 
 **Technique:** progressive disclosure.
+
+```mermaid
+flowchart TD
+ A[Page 1\nDecision + recommendation] --> B[Pages 2–3\nEvidence + impact]
+ B --> C[Next step\nRisk + measurement]
+ C --> D[Appendix\nMethods + diagnostics]
+```
 
 A concise decision brief should follow this order:
 
@@ -213,6 +345,15 @@ The first page should be sufficient for the decision; the appendix should be suf
 ## Step 15 — Measure whether the story worked
 
 **Technique:** decision and outcome instrumentation.
+
+```mermaid
+flowchart LR
+ A[Insight delivered] --> B[Decision adopted]
+ B --> C[Action launched]
+ C --> D[Outcome measured]
+ D --> E[Learning captured]
+ E --> A
+```
 
 Track:
 
